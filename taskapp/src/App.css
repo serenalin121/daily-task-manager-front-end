@@ -2,6 +2,33 @@
   text-align: center;
 }
 
+body {
+  background-image: url(https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2017/07/Computer-Wallpaper-Productive-Featured.jpg);
+}
+
+img {
+  padding: 400px
+}
+
+#image {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left:0%;
+      width: 100%;
+    }
+  }
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

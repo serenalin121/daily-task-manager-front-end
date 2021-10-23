@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Task from "./components/Task";
-import NewForm from "./Newform";
+import NewForm from "./components/Newform";
 
 const baseURL = "http://localhost:3003";
 
