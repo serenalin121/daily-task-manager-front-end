@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import Task from "./components/Task";
 
 const baseURL = "http://localhost:3003";
 
@@ -30,7 +31,14 @@ const App = () => {
       <table>
         <tbody>
           {tasks.map((task) => {
-            return <td>{task.name}</td>;
+            return (
+              <Task
+                key={task._id}
+                task={task}
+                allTasks={tasks}
+                baseURL={baseURL}
+              />
+            );
           })}
         </tbody>
       </table>
