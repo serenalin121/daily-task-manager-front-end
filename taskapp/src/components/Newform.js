@@ -61,7 +61,6 @@ export default class NewForm extends Component {
 
   render() {
     return (
-
       <Form onSubmit={this.handleSubmit}>
   <Form.Group className="mb-3"> 
     <Form.Label>Task</Form.Label>
@@ -71,7 +70,7 @@ export default class NewForm extends Component {
 
   <Form.Group className="mb-3">
     <Form.Label>Due Date</Form.Label>
-    <Form.Control type="text" onChange={(e) => this.handleChangeDueDate(e)} value={this.state.dueDate}/>
+    <Form.Control type="date" onChange={(e) => this.handleChangeDueDate(e)} value={this.state.dueDate}/>
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicCheckbox">
