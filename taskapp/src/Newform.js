@@ -32,7 +32,7 @@ export default class NewForm extends Component {
     event.preventDefault()
     fetch(this.props.baseUrl + '/tasks', {
       method: 'POST',
-      body: JSON.stringify({name: this.state.name}, {this.state.dueDate}, {this.state.isComplete}),
+      body: JSON.stringify({name: this.state.name}, {dueDate: this.state.dueDate}, {isComplete: this.state.isComplete}),
       headers: {
         'Content-Type': 'application/json'
       },
@@ -43,7 +43,7 @@ export default class NewForm extends Component {
       this.setState({
         name: '',
         dueDate: '',
-        isComplete: Boolean,
+        isComplete:
       })
     }).catch (error => console.log({'Error': error}))
   }
@@ -51,12 +51,13 @@ export default class NewForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-      <label htmlFor='name'>Task:</label>
-      <input type='text' id='name' onChange={(e) => this.handleChangeName(e)} value={this.state.name}/>
-      <label htmlFor='dueDate'>Due Date:</label>
-      <input type='text' id='dueDate' onChange={(e) => this.handleChangeDueDate(e)} value={this.state.dueDate}/>
-      <label htmlFor='isComplete'>Completed:</label>
-      <input type='checkbox' checked={this.state.isComplete} onChange={(e) => this.handleChangeComplete(e)}/>
+        <label htmlFor='name'>Task:</label>
+        <input type='text' id='name' onChange={(e) => this.handleChangeName(e)} value={this.state.name}/>
+        <label htmlFor='dueDate'>Due Date:</label>
+        <input type='text' id='dueDate' onChange={(e) => this.handleChangeDueDate(e)} value={this.state.dueDate}/>
+        <label htmlFor='isComplete'>Completed:</label>
+        <input type='checkbox' checked={this.state.isComplete} onChange={(e) => this.handleChangeComplete(e)}/>
+      </form>
     )
   }
 }
