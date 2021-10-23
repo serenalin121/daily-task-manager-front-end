@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
+
 export default class NewForm extends Component {
   constructor(props) {
     super(props);
@@ -57,29 +61,27 @@ export default class NewForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="name">Task:</label>
-        <input
-          type="text"
-          id="name"
-          onChange={(e) => this.handleChangeName(e)}
-          value={this.state.name}
-        />
-        <label htmlFor="dueDate">Due Date:</label>
-        <input
-          type="date"
-          id="dueDate"
-          onChange={(e) => this.handleChangeDueDate(e)}
-          value={this.state.dueDate}
-        />
-        <label htmlFor="isComplete">Completed:</label>
-        <input
-          type="checkbox"
-          checked={this.state.isComplete}
-          onChange={(e) => this.handleChangeComplete(e)}
-        />
-        <input className="submit-button" type="submit" value="Add" />
-      </form>
+      <Form onSubmit={this.handleSubmit}>
+  <Form.Group className="mb-3"> 
+    <Form.Label>Task</Form.Label>
+    <Form.Control type="text" onChange={(e) => this.handleChangeName(e)} value={this.state.name}/>
+  
+  </Form.Group>
+
+  <Form.Group className="mb-3">
+    <Form.Label>Due Date</Form.Label>
+    <Form.Control type="date" onChange={(e) => this.handleChangeDueDate(e)} value={this.state.dueDate}/>
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicCheckbox">
+    <Form.Label>Completed?</Form.Label>
+    <Form.Check type="checkbox" checked={this.state.isComplete} onChange={(e) => this.handleChangeComplete(e)} />
+  </Form.Group>
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+</Form>
+     
     );
   }
-}
+  }
