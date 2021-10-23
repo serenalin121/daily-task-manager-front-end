@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
-function App() {
+const baseURL = "http://localhost:3003";
+
+const App = () => {
+  const [tasks, setTasks] = useState([]);
+
+  const getTasks = () => {
+    fetch(baseURL + "/tasks")
+      .then((res) => {
+        if (res.status === 200) {
+          return res.json();
+        } else {
+          return [];
+        }
+      })
+      .then((data) => {
+        setTasks(data);
+      });
+  };
+
+  useEffect(() => {
+    getTasks();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Daily Task Manager</h1>
+      <table>
+        <tbody>
+          {tasks.map((task) => {
+            return <td>{task.name}</td>;
+          })}
+        </tbody>
+      </table>
     </div>
   );
-}
+};
 
 export default App;
