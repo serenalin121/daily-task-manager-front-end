@@ -1,7 +1,7 @@
 # daily-task-manager
 Welcome to the daily task manager app! We wanted users to be able to add daily tasks for themselves and assign a due date of completion. We then wanted users to be able to mark each task as either complete or incomplete. The app also includes a login/register form.
 
-> Here are our models including field names and their datatypes<
+> Here are our models including field names and their datatypes:
 ```
 const userSchema = new mongoose.Schema({
 	email: {
