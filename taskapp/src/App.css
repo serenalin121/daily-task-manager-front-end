@@ -4,10 +4,31 @@
 
 body {
   background-image: url(https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2017/07/Computer-Wallpaper-Productive-Featured.jpg);
+  background-size: cover
 }
 
 img {
-  padding: 400px
+  padding: 100px
+}
+
+.task {
+  margin-left: 400px;
+  margin-right: 400px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large;
+  
+}
+
+.date {
+  margin-left: 400px;
+  margin-right: 400px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large
+}
+
+.complete {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large
 }
 
 #image {
