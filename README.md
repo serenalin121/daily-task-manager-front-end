@@ -46,12 +46,12 @@ Check out or wireframes:
 
 Now take a look at our user stories:
 
-As a user I want to be able to login into my task manager app.
-As a user I want to be able to add tasks to my app.
-As a user I want to be able to edit/update my tasks in my app.
-As a user I want to be able to delete my tasks in my app.
-As a user I want to be able to assign a due date to my task.
-As a user I want to be able to mark a task as complete/incomplete in my app.
+-As a user I want to be able to login into my task manager app.
+-As a user I want to be able to add tasks to my app.
+-As a user I want to be able to edit/update my tasks in my app.
+-As a user I want to be able to delete my tasks in my app.
+-As a user I want to be able to assign a due date to my task.
+-As a user I want to be able to mark a task as complete/incomplete in my app.
 
 
 We hope our app will help you reach your goals every day!
