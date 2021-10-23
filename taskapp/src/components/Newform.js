@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Button from "react-bootstrap/Button";
 
 export default class NewForm extends Component {
   constructor(props) {
@@ -80,7 +79,6 @@ export default class NewForm extends Component {
           onChange={(e) => this.handleChangeComplete(e)}
         />
         <input className="submit-button" type="submit" value="Add" />
-        <Button variant="primary">Primary</Button>
       </form>
     );
   }

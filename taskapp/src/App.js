@@ -3,13 +3,13 @@ import "./App.css";
 import Task from "./components/Task";
 import NewForm from "./components/Newform";
 
-const baseURL = "http://localhost:3003";
+const baseUrl = "http://localhost:3003";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
 
   const getTasks = () => {
-    fetch(baseURL + "/tasks")
+    fetch(baseUrl + "/tasks")
       .then((res) => {
         if (res.status === 200) {
           return res.json();
@@ -38,10 +38,19 @@ const App = () => {
     setTasks(copyTasks);
   };
 
+  const handleUpdateTask = (updatedTask) => {
+    const copyTasks = [...tasks];
+    const findIndex = tasks.findIndex((task) => task._id === updatedTask._id);
+    copyTasks[findIndex].name = updatedTask.name;
+    copyTasks[findIndex].dueDate = updatedTask.dueDate;
+    copyTasks[findIndex].isComplete = updatedTask.isComplete;
+    setTasks(copyTasks);
+  };
+
   return (
     <div className="App">
       <h1>Daily Task Manager</h1>
-      <NewForm baseUrl={baseURL} addTask={handleAddTask} />
+      <NewForm baseUrl={baseUrl} addTask={handleAddTask} />
       <table>
         <tbody>
           {tasks.map((task) => {
@@ -50,8 +59,9 @@ const App = () => {
                 key={task._id}
                 task={task}
                 allTasks={tasks}
-                baseURL={baseURL}
+                baseUrl={baseUrl}
                 deleteTask={handleDeleteTask}
+                updateTask={handleUpdateTask}
               />
             );
           })}
