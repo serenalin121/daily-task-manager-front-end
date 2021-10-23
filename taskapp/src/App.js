@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Task from "./components/Task";
-import NewForm from "./Newform";
+import NewForm from "./components/Newform";
 
 const baseURL = "http://localhost:3003";
 
@@ -32,6 +32,12 @@ const App = () => {
     setTasks(copyTasks);
   };
 
+  const handleDeleteTask = (index) => {
+    const copyTasks = [...tasks];
+    copyTasks.splice(index, 1);
+    setTasks(copyTasks);
+  };
+
   return (
     <div className="App">
       <h1>Daily Task Manager</h1>
@@ -45,6 +51,7 @@ const App = () => {
                 task={task}
                 allTasks={tasks}
                 baseURL={baseURL}
+                deleteTask={handleDeleteTask}
               />
             );
           })}
