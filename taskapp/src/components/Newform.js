@@ -67,7 +67,7 @@ export default class NewForm extends Component {
         />
         <label htmlFor="dueDate">Due Date:</label>
         <input
-          type="text"
+          type="date"
           id="dueDate"
           onChange={(e) => this.handleChangeDueDate(e)}
           value={this.state.dueDate}

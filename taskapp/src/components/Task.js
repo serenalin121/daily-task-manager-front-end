@@ -21,11 +21,19 @@ const Task = (props) => {
     props.updateTask(enteredTask);
     setIsInEditMode(!isInEditMode);
   };
+
   return (
     <tr key={props.task._id}>
-      <td>{props.task.name}</td>
-      <td>{props.task.dueDate}</td>
-      <input type="checkbox" checked={props.task.isComplete} readOnly />
+      {!isInEditMode && (
+        <>
+          <td>{props.task.name}</td>
+          <td>{props.task.dueDate}</td>
+          <td>
+            <input type="checkbox" checked={props.task.isComplete} readOnly />
+          </td>
+        </>
+      )}
+
       <td>
         {isInEditMode ? (
           <EditForm
@@ -36,12 +44,18 @@ const Task = (props) => {
           />
         ) : null}{" "}
       </td>
-      <button key={props.task._id} onClick={toggleEditFrom}>
-        {!isInEditMode ? "Edit" : "Cancel"}
-      </button>
-      <button type="submit" onClick={() => handledeleteTask(props.task._id)}>
-        Delete
-      </button>
+      <td>
+        {" "}
+        <button key={props.task._id} onClick={toggleEditFrom}>
+          {!isInEditMode ? "Edit" : "Cancel"}
+        </button>
+      </td>
+      <td>
+        {" "}
+        <button type="submit" onClick={() => handledeleteTask(props.task._id)}>
+          Delete
+        </button>
+      </td>
     </tr>
   );
 };

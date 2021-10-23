@@ -55,7 +55,6 @@ export default class NewForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor="name">Task:</label>
         <input
           type="text"
           id="name"
@@ -63,9 +62,8 @@ export default class NewForm extends Component {
           onChange={(e) => this.handleChangeName(e)}
           value={this.state.name}
         />
-        <label htmlFor="dueDate">Due Date:</label>
         <input
-          type="text"
+          type="date"
           id="dueDate"
           name="dueDate"
           onChange={(e) => this.handleChangeDueDate(e)}
