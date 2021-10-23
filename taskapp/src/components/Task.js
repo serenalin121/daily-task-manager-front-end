@@ -3,7 +3,7 @@ const Task = (props) => {
     <tr key={props.task._id}>
       <td>{props.task.name}</td>
       <td>{props.task.dueDate}</td>
-      <td>{props.task.isComplete}</td>
+      <input type="checkbox" checked={props.task.isComplete} readOnly />
     </tr>
   );
 };

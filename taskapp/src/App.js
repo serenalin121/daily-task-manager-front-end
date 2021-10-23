@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Task from "./components/Task";
+import NewForm from "./Newform";
 
 const baseURL = "http://localhost:3003";
 
@@ -25,9 +26,16 @@ const App = () => {
     getTasks();
   }, []);
 
+  const handleAddTask = (newTask) => {
+    const copyTasks = [...tasks];
+    copyTasks.push(newTask);
+    setTasks(copyTasks);
+  };
+
   return (
     <div className="App">
       <h1>Daily Task Manager</h1>
+      <NewForm baseUrl={baseURL} addTask={handleAddTask} />
       <table>
         <tbody>
           {tasks.map((task) => {
