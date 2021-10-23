@@ -81,29 +81,7 @@ export default class NewForm extends Component {
     Submit
   </Button>
 </Form>
-      // <form onSubmit={this.handleSubmit}>
-      //   <label htmlFor="name">Task:</label>
-      //   <input
-      //     type="text"
-      //     id="name"
-      //     onChange={(e) => this.handleChangeName(e)}
-      //     value={this.state.name}
-      //   />
-      //   <label htmlFor="dueDate">Due Date:</label>
-      //   <input
-      //     type="text"
-      //     id="dueDate"
-      //     onChange={(e) => this.handleChangeDueDate(e)}
-      //     value={this.state.dueDate}
-      //   />
-      //   <label htmlFor="isComplete">Completed:</label>
-      //   <input
-      //     type="checkbox"
-      //     checked={this.state.isComplete}
-      //     onChange={(e) => this.handleChangeComplete(e)}
-      //   />
-      //   <Button variant="primary" type="submit">Add</Button>{' '}
-      // </form>
+     
     );
   }
   }
