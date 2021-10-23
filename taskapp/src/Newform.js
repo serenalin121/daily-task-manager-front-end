@@ -32,7 +32,7 @@ export default class NewForm extends Component {
     event.preventDefault()
     fetch(this.props.baseUrl + '/tasks', {
       method: 'POST',
-      body: JSON.stringify({name: this.state.name}, {dueDate: this.state.dueDate}, {isComplete: this.state.isComplete}),
+      body: JSON.stringify({name: this.state.name, dueDate: this.state.dueDate, isComplete: this.state.isComplete}),
       headers: {
         'Content-Type': 'application/json'
       },
