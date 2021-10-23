@@ -44,14 +44,9 @@ Check out or wireframes:
 <img width="728" alt="Screen Shot 2021-10-19 at 6 09 11 PM" src="https://media.git.generalassemb.ly/user/36959/files/57413280-3109-11ec-957e-27c1b700ee7b">
 <img width="1187" alt="Screen Shot 2021-10-19 at 6 09 19 PM" src="https://media.git.generalassemb.ly/user/36959/files/590af600-3109-11ec-91be-e34cf2907304">
 
-Now take a look at our user stories:
+Here are our user stories:
 
--As a user I want to be able to login into my task manager app.
--As a user I want to be able to add tasks to my app.
--As a user I want to be able to edit/update my tasks in my app.
--As a user I want to be able to delete my tasks in my app.
--As a user I want to be able to assign a due date to my task.
--As a user I want to be able to mark a task as complete/incomplete in my app.
+As a user, I want to be able to login into my task manager app, add tasks to my app, edit/update my tasks in my app, delete my tasks in my app, assign a due date to my task, and mark a task as complete/incomplete in my app.
 
 
 We hope our app will help you reach your goals every day!
