@@ -1,12 +1,25 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 import Task from "./components/Task";
 import NewForm from "./components/Newform";
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import moment from "moment";
+
+import "./App.css";
+import "react-big-calendar/lib/css/react-big-calendar.css";
+// Setup the localizer by providing the moment (or globalize) Object
+// to the correct localizer.
+const localizer = momentLocalizer(moment);
 
 const baseUrl = "http://localhost:3003";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
+
+  const events = tasks.map((task) => ({
+    start: moment(task.dueDate).toDate(),
+    end: moment(task.dueDate).add(1, "days").toDate(),
+    title: task.name,
+  }));
 
   const getTasks = () => {
     fetch(baseUrl + "/tasks")
@@ -50,7 +63,9 @@ const App = () => {
   return (
     <div className="App">
       <h1>Daily Task Manager</h1>
+      <h2>Add a new task</h2>
       <NewForm baseUrl={baseUrl} addTask={handleAddTask} />
+      <h3>All Tasks</h3>
       <table>
         <tbody>
           {tasks.map((task) => {
@@ -67,6 +82,15 @@ const App = () => {
           })}
         </tbody>
       </table>
+      <div>
+        <Calendar
+          localizer={localizer}
+          defaultDate={new Date()}
+          defaultView="month"
+          events={events}
+          style={{ height: "100vh" }}
+        />
+      </div>
     </div>
   );
 };

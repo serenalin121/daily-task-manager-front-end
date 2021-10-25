@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-
+import { Button, Form } from "react-bootstrap";
 
 export default class NewForm extends Component {
   constructor(props) {
@@ -62,26 +60,36 @@ export default class NewForm extends Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
-  <Form.Group className="mb-3"> 
-    <Form.Label>Task</Form.Label>
-    <Form.Control type="text" onChange={(e) => this.handleChangeName(e)} value={this.state.name}/>
-  
-  </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Task</Form.Label>
+          <Form.Control
+            type="text"
+            onChange={(e) => this.handleChangeName(e)}
+            value={this.state.name}
+          />
+        </Form.Group>
 
-  <Form.Group className="mb-3">
-    <Form.Label>Due Date</Form.Label>
-    <Form.Control type="date" onChange={(e) => this.handleChangeDueDate(e)} value={this.state.dueDate}/>
-  </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Due Date</Form.Label>
+          <Form.Control
+            type="date"
+            onChange={(e) => this.handleChangeDueDate(e)}
+            value={this.state.dueDate}
+          />
+        </Form.Group>
 
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Label>Completed?</Form.Label>
-    <Form.Check type="checkbox" checked={this.state.isComplete} onChange={(e) => this.handleChangeComplete(e)} />
-  </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form>
-     
+        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+          <Form.Label>Completed?</Form.Label>
+          <Form.Check
+            type="checkbox"
+            checked={this.state.isComplete}
+            onChange={(e) => this.handleChangeComplete(e)}
+          />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
     );
   }
-  }
+}
