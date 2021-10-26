@@ -6,21 +6,23 @@
 .task-calendar-container {
   margin-top: 30px;
 }
-/* body {
+
+/* 
+body {
   background-image: url(https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2017/07/Computer-Wallpaper-Productive-Featured.jpg);
-} */
+}
 
-/* img {
+img {
   padding: 400px;
-} */
+}
 
-/* #image {
+#image {
   animation-duration: 3s;
   animation-name: slidein;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-} */
-/* @keyframes slidein {
+}
+@keyframes slidein {
   from {
     margin-left: 100%;
     width: 300%;

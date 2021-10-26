@@ -63,9 +63,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Daily Task Manager</h1>
-      <h2>Add a new task</h2>
-      <NewForm baseUrl={baseUrl} addTask={handleAddTask} />
+      <Container>
+        <h1>Daily Task Manager</h1>
+        <h2>Add a new task</h2>
+        <NewForm baseUrl={baseUrl} addTask={handleAddTask} />
+      </Container>
 
       <Row className="task-calendar-container">
         <Col xs={12} md={6}>
