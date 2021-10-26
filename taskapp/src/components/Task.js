@@ -1,5 +1,6 @@
 import { useState } from "react";
 import EditForm from "./EditForm";
+import { Button } from "react-bootstrap";
 
 const Task = (props) => {
   const [isInEditMode, setIsInEditMode] = useState(false);
@@ -21,27 +22,46 @@ const Task = (props) => {
     props.updateTask(enteredTask);
     setIsInEditMode(!isInEditMode);
   };
+
   return (
     <tr key={props.task._id}>
-      <td>{props.task.name}</td>
-      <td>{props.task.dueDate}</td>
-      <input type="checkbox" checked={props.task.isComplete} readOnly />
+      {!isInEditMode && (
+        <>
+          <td>{props.task.name}</td>
+          <td>{props.task.dueDate}</td>
+          <td>
+            <input type="checkbox" checked={props.task.isComplete} readOnly />
+          </td>
+        </>
+      )}
+      {isInEditMode && (
+        <EditForm
+          key={props.task._id}
+          task={props.task}
+          baseUrl={props.baseUrl}
+          updateTask={saveUpdateTask}
+        />
+      )}
       <td>
-        {isInEditMode ? (
-          <EditForm
-            key={props.task._id}
-            task={props.task}
-            baseUrl={props.baseUrl}
-            updateTask={saveUpdateTask}
-          />
-        ) : null}{" "}
+        <Button
+          variant="outline-light"
+          key={props.task._id}
+          onClick={toggleEditFrom}
+        >
+          {!isInEditMode ? "Edit" : "Cancel"}
+        </Button>
       </td>
-      <button key={props.task._id} onClick={toggleEditFrom}>
-        {!isInEditMode ? "Edit" : "Cancel"}
-      </button>
-      <button type="submit" onClick={() => handledeleteTask(props.task._id)}>
-        Delete
-      </button>
+      {!isInEditMode && (
+        <td>
+          <Button
+            variant="outline-danger"
+            type="submit"
+            onClick={() => handledeleteTask(props.task._id)}
+          >
+            Delete
+          </Button>
+        </td>
+      )}
     </tr>
   );
 };

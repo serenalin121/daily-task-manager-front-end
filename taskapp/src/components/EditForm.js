@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button } from "react-bootstrap";
 
 export default class NewForm extends Component {
   constructor(props) {
@@ -29,9 +30,7 @@ export default class NewForm extends Component {
     });
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-
+  handleSubmit = () => {
     fetch(this.props.baseUrl + "/tasks/" + this.props.task._id, {
       method: "PUT",
       body: JSON.stringify({
@@ -54,31 +53,46 @@ export default class NewForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="name">Task:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          onChange={(e) => this.handleChangeName(e)}
-          value={this.state.name}
-        />
-        <label htmlFor="dueDate">Due Date:</label>
-        <input
-          type="text"
-          id="dueDate"
-          name="dueDate"
-          onChange={(e) => this.handleChangeDueDate(e)}
-          value={this.state.dueDate}
-        />
-        <label htmlFor="isComplete">Completed:</label>
-        <input
-          type="checkbox"
-          checked={this.state.isComplete}
-          onChange={(e) => this.handleChangeComplete(e)}
-        />
-        <input className="submit-button" type="submit" value="Update" />
-      </form>
+      // <form onSubmit={this.handleSubmit}>
+      <>
+        <td>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            onChange={(e) => this.handleChangeName(e)}
+            value={this.state.name}
+          />
+        </td>
+        <td>
+          <input
+            type="date"
+            id="dueDate"
+            name="dueDate"
+            onChange={(e) => this.handleChangeDueDate(e)}
+            value={this.state.dueDate}
+          />
+        </td>
+
+        <td>
+          <input
+            type="checkbox"
+            checked={this.state.isComplete}
+            onChange={(e) => this.handleChangeComplete(e)}
+          />
+        </td>
+        <td>
+          <Button
+            variant="outline-info"
+            type="submit"
+            value="Update"
+            onClick={this.handleSubmit}
+          >
+            Update
+          </Button>
+        </td>
+      </>
+      // </form>
     );
   }
 }
