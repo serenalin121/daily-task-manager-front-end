@@ -13,7 +13,26 @@ body {
 }
 
 img {
-  padding: 400px;
+  padding: 100px;
+}
+
+.task {
+  margin-left: 400px;
+  margin-right: 400px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: large;
+}
+
+.date {
+  margin-left: 400px;
+  margin-right: 400px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: large;
+}
+
+.complete {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: large;
 }
 
 #image {
@@ -22,6 +41,7 @@ img {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+
 @keyframes slidein {
   from {
     margin-left: 100%;

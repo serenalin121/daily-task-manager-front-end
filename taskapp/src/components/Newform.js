@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
-import { Button, Form } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 export default class NewForm extends Component {
   constructor(props) {
@@ -42,6 +43,7 @@ export default class NewForm extends Component {
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include",
     })
       .then((res) => {
         return res.json();

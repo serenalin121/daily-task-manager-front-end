@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Task from "./components/Task";
 import NewForm from "./components/Newform";
+import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import { Container, Row, Col, Table } from "react-bootstrap";
@@ -15,6 +17,7 @@ const baseUrl = "http://localhost:3003";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const events = tasks.map((task) => ({
     start: moment(task.dueDate).toDate(),
@@ -23,7 +26,9 @@ const App = () => {
   }));
 
   const getTasks = () => {
-    fetch(baseUrl + "/tasks")
+    fetch(baseUrl + "/tasks", {
+      credentials: "include",
+    })
       .then((res) => {
         if (res.status === 200) {
           return res.json();
@@ -36,9 +41,43 @@ const App = () => {
       });
   };
 
+  const signOut = () => {
+    fetch(baseUrl + "/users/signout", {
+      credentials: "include",
+      method: "DELETE",
+    }).then((response) => {
+      if (response.status === 200) {
+        setIsLoggedIn(false);
+      }
+    });
+  };
+
   useEffect(() => {
-    getTasks();
+    const renewSession = () => {
+      fetch(baseUrl + "/users/renew", {
+        credentials: "include",
+        method: "POST",
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((res) => {
+          if (res.result) {
+            setIsLoggedIn(true);
+          }
+        });
+    };
+
+    renewSession();
   }, []);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      getTasks();
+    } else {
+      setTasks([]);
+    }
+  }, [isLoggedIn]);
 
   const handleAddTask = (newTask) => {
     const copyTasks = [...tasks];
@@ -65,6 +104,21 @@ const App = () => {
     <div className="App">
       <Container>
         <h1>Daily Task Manager</h1>
+        {!isLoggedIn && (
+          <SignIn
+            isSignin={false}
+            baseUrl={baseUrl}
+            isLoggedIn={setIsLoggedIn}
+          />
+        )}
+        {!isLoggedIn && (
+          <SignIn
+            isSignin={true}
+            baseUrl={baseUrl}
+            isLoggedIn={setIsLoggedIn}
+          />
+        )}
+        {isLoggedIn && <button onClick={signOut}>Sign out</button>}
         <h2>Add a new task</h2>
         <NewForm baseUrl={baseUrl} addTask={handleAddTask} />
       </Container>
