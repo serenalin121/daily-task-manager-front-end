@@ -8,6 +8,7 @@ const Task = (props) => {
   const handledeleteTask = (id) => {
     fetch(props.baseUrl + "/tasks/" + id, {
       method: "DELETE",
+      credentials: "include"
     }).then((res) => {
       const findIndex = props.allTasks.findIndex((task) => task._id === id);
       props.deleteTask(findIndex);

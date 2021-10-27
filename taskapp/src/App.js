@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Task from "./components/Task";
 import NewForm from "./components/Newform";
+import SignUp from "./components/SignUp"
+import SignIn from "./components/SignIn"
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import { Container, Row, Col, Table } from "react-bootstrap";
@@ -23,7 +25,9 @@ const App = () => {
   }));
 
   const getTasks = () => {
-    fetch(baseUrl + "/tasks")
+    fetch(baseUrl + "/tasks", {
+      credentials: "include"
+    })
       .then((res) => {
         if (res.status === 200) {
           return res.json();
@@ -65,8 +69,14 @@ const App = () => {
     <div className="App">
       <Container>
         <h1>Daily Task Manager</h1>
+
         <hr></hr>
         <h2>Add a new task:</h2>
+
+        <SignUp baseUrl={baseUrl} getTasks={getTasks} />
+        <SignIn baseUrl={baseUrl} getTasks={getTasks} />
+      
+
         <NewForm baseUrl={baseUrl} addTask={handleAddTask} />
       </Container>
 
