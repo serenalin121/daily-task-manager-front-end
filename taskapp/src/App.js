@@ -112,48 +112,50 @@ const App = () => {
           />
         )} */}
         {isLoggedIn && <button onClick={signOut}>Sign out</button>}
-        <h2>Add a new task</h2>
-        <NewForm baseUrl={baseUrl} addTask={handleAddTask} />
+        {isLoggedIn && <h2>Add a new task</h2>}
+        {isLoggedIn && <NewForm baseUrl={baseUrl} addTask={handleAddTask} />}
       </Container>
 
-      <Row className="task-calendar-container">
-        <Col xs={12} md={6}>
-          <h3>All Tasks</h3>
-          <Table striped bordered hover variant="dark">
-            <tbody>
-              <tr>
-                <td>Task Name</td>
-                <td>Due Date</td>
-                <td>Completed</td>
-                <td></td>
-                <td></td>
-              </tr>
-              {tasks.map((task) => {
-                return (
-                  <Task
-                    key={task._id}
-                    task={task}
-                    allTasks={tasks}
-                    baseUrl={baseUrl}
-                    deleteTask={handleDeleteTask}
-                    updateTask={handleUpdateTask}
-                  />
-                );
-              })}
-            </tbody>
-          </Table>
-        </Col>
-        <Col xs={12} md={6}>
-          <Calendar
-            views={["month", "week"]}
-            localizer={localizer}
-            defaultDate={new Date()}
-            defaultView="month"
-            events={events}
-            style={{ height: "50vh" }}
-          />
-        </Col>
-      </Row>
+      {isLoggedIn && (
+        <Row className="task-calendar-container">
+          <Col xs={12} md={6}>
+            <h3>All Tasks</h3>
+            <Table striped bordered hover variant="dark">
+              <tbody>
+                <tr>
+                  <td>Task Name</td>
+                  <td>Due Date</td>
+                  <td>Completed</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                {tasks.map((task) => {
+                  return (
+                    <Task
+                      key={task._id}
+                      task={task}
+                      allTasks={tasks}
+                      baseUrl={baseUrl}
+                      deleteTask={handleDeleteTask}
+                      updateTask={handleUpdateTask}
+                    />
+                  );
+                })}
+              </tbody>
+            </Table>
+          </Col>
+          <Col xs={12} md={6}>
+            <Calendar
+              views={["month", "week"]}
+              localizer={localizer}
+              defaultDate={new Date()}
+              defaultView="month"
+              events={events}
+              style={{ height: "50vh" }}
+            />
+          </Col>
+        </Row>
+      )}
     </div>
   );
 };
