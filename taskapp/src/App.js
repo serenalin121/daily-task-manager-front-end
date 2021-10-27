@@ -4,7 +4,7 @@ import NewForm from "./components/Newform";
 import SignIn from "./components/SignIn";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-import { Container, Row, Col, Table } from "react-bootstrap";
+import { Navbar, Container, Row, Col, Table } from "react-bootstrap";
 
 import "./App.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -101,17 +101,21 @@ const App = () => {
 
   return (
     <div className="App">
+      <Navbar bg="light" variant="light">
+        <Navbar.Brand href="#home">
+          <h1>Daily Task Manager</h1>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <Navbar.Text>
+            {isLoggedIn && <button onClick={signOut}>Sign out</button>}
+          </Navbar.Text>
+        </Navbar.Collapse>
+      </Navbar>
+
       <Container>
-        <h1>Daily Task Manager</h1>
         {!isLoggedIn && <SignIn baseUrl={baseUrl} isLoggedIn={setIsLoggedIn} />}
-        {/* {!isLoggedIn && (
-          <SignIn
-            isSignin={true}
-            baseUrl={baseUrl}
-            isLoggedIn={setIsLoggedIn}
-          />
-        )} */}
-        {isLoggedIn && <button onClick={signOut}>Sign out</button>}
+
         {isLoggedIn && <h2>Add a new task</h2>}
         {isLoggedIn && <NewForm baseUrl={baseUrl} addTask={handleAddTask} />}
       </Container>
@@ -120,7 +124,7 @@ const App = () => {
         <Row className="task-calendar-container">
           <Col xs={12} md={6}>
             <h3>All Tasks</h3>
-            <Table striped bordered hover variant="dark">
+            <Table striped bordered hover>
               <tbody>
                 <tr>
                   <td>Task Name</td>

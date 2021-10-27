@@ -37,6 +37,7 @@ const Task = (props) => {
       )}
       {isInEditMode && (
         <EditForm
+          variant="outline-dark"
           key={props.task._id}
           task={props.task}
           baseUrl={props.baseUrl}
@@ -45,7 +46,7 @@ const Task = (props) => {
       )}
       <td>
         <Button
-          variant="outline-light"
+          variant="outline-dark"
           key={props.task._id}
           onClick={toggleEditFrom}
         >

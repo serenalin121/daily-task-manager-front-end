@@ -12,20 +12,29 @@ body {
   background-size: cover;
 }
 
+h1 {
+  color: green;
+}
+
+h2 {
+  font-size: x-large;
+  padding-bottom: 20px;
+}
+
 img {
   padding: 100px;
 }
 
 .task {
-  margin-left: 400px;
-  margin-right: 400px;
+  margin-left: 300px;
+  margin-right: 300px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: large;
 }
 
 .date {
-  margin-left: 400px;
-  margin-right: 400px;
+  margin-left: 300px;
+  margin-right: 300px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: large;
 }
