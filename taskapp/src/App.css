@@ -1,17 +1,59 @@
 .App {
   text-align: center;
+  margin: 15px 20px 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.task-calendar-container {
+  margin-top: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+body {
+  background-image: url(https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2017/07/Computer-Wallpaper-Productive-Featured.jpg);
+  background-size: cover
+}
+
+img {
+  padding: 100px
+}
+
+.task {
+  margin-left: 400px;
+  margin-right: 400px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large;
+
+}
+
+.date {
+  margin-left: 400px;
+  margin-right: 400px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large
+}
+
+.complete {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large
+}
+
+#image {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
   }
-}
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+} 
 
 .App-header {
   background-color: #282c34;
@@ -26,13 +68,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
