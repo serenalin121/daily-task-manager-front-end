@@ -7,9 +7,9 @@
   margin-top: 30px;
 }
 
-/* 
 body {
   background-image: url(https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2017/07/Computer-Wallpaper-Productive-Featured.jpg);
+  background-size: cover;
 }
 
 img {
@@ -32,7 +32,7 @@ img {
     margin-left: 0%;
     width: 100%;
   }
-} */
+}
 
 .App-header {
   background-color: #282c34;

@@ -63,6 +63,7 @@ export default class NewForm extends Component {
         <Form.Group className="mb-3">
           <Form.Label>Task</Form.Label>
           <Form.Control
+            md={{ span: 6, offset: 6 }}
             type="text"
             onChange={(e) => this.handleChangeName(e)}
             value={this.state.name}
