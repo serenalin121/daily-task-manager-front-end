@@ -53,10 +53,10 @@ export default class NewForm extends Component {
 
   render() {
     return (
-      // <form onSubmit={this.handleSubmit}>
+      // <form>
       <>
         <td>
-          <input
+          <input 
             type="text"
             id="name"
             name="name"
@@ -65,7 +65,7 @@ export default class NewForm extends Component {
           />
         </td>
         <td>
-          <input
+          <input 
             type="date"
             id="dueDate"
             name="dueDate"
@@ -83,7 +83,7 @@ export default class NewForm extends Component {
         </td>
         <td>
           <Button
-            variant="outline-info"
+            variant="outline-success"
             type="submit"
             value="Update"
             onClick={this.handleSubmit}
@@ -92,7 +92,7 @@ export default class NewForm extends Component {
           </Button>
         </td>
       </>
-      // </form>
+      //  </form>
     );
   }
 }

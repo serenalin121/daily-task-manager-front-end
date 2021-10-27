@@ -65,14 +65,15 @@ const App = () => {
     <div className="App">
       <Container>
         <h1>Daily Task Manager</h1>
-        <h2>Add a new task</h2>
+        <hr></hr>
+        <h2>Add a new task:</h2>
         <NewForm baseUrl={baseUrl} addTask={handleAddTask} />
       </Container>
 
       <Row className="task-calendar-container">
         <Col xs={12} md={6}>
           <h3>All Tasks</h3>
-          <Table striped bordered hover variant="dark">
+          <Table striped bordered hover class="table">
             <tbody>
               <tr>
                 <td>Task Name</td>

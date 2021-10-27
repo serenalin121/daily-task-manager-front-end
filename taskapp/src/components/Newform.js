@@ -61,7 +61,7 @@ export default class NewForm extends Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3" class="task">
           <Form.Label>Task</Form.Label>
           <Form.Control
             type="text"
@@ -70,7 +70,7 @@ export default class NewForm extends Component {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3" class="date">
           <Form.Label>Due Date</Form.Label>
           <Form.Control
             type="date"
@@ -79,7 +79,7 @@ export default class NewForm extends Component {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Group className="mb-3" controlId="formBasicCheckbox" class="complete">
           <Form.Label>Completed?</Form.Label>
           <Form.Check
             type="checkbox"
@@ -90,6 +90,7 @@ export default class NewForm extends Component {
         <Button variant="primary" type="submit">
           Submit
         </Button>
+        <hr></hr>
       </Form>
     );
   }

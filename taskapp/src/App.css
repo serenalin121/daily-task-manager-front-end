@@ -7,10 +7,20 @@
   margin-top: 30px;
 }
 
-/* 
 body {
   background-image: url(https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2017/07/Computer-Wallpaper-Productive-Featured.jpg);
   background-size: cover
+}
+
+h1 {
+  color: green;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+h2 {
+  font-size: x-large;
+  padding-bottom: 20px;
 }
 
 img {
@@ -18,24 +28,26 @@ img {
 }
 
 .task {
-  margin-left: 400px;
-  margin-right: 400px;
+  margin-left: 300px;
+  margin-right: 300px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: large;
-  
 }
 
 .date {
-  margin-left: 400px;
-  margin-right: 400px;
+  margin-left: 300px;
+  margin-right: 300px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: large
 }
+
 
 .complete {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: large
 }
+
+
 
 #image {
   animation-duration: 3s;
@@ -53,7 +65,7 @@ img {
     margin-left: 0%;
     width: 100%;
   }
-} */
+} 
 
 .App-header {
   background-color: #282c34;
