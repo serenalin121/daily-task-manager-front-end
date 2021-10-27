@@ -69,8 +69,8 @@ const App = () => {
     <div className="App">
       <Container>
         <h1>Daily Task Manager</h1>
-        <SignUp baseUrl={baseUrl} />
-        <SignIn baseUrl={baseUrl} />
+        <SignUp baseUrl={baseUrl} getTasks={getTasks} />
+        <SignIn baseUrl={baseUrl} getTasks={getTasks} />
         <h2>Add a new task</h2>
         <NewForm baseUrl={baseUrl} addTask={handleAddTask} />
       </Container>

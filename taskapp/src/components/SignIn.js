@@ -38,6 +38,10 @@ export default class SignIn extends Component {
       })
       if (response.status === 200) {
         this.props.getTasks()
+        this.setState({
+          username: "",
+          password: "",
+        })
       }
     }
     catch (err) {

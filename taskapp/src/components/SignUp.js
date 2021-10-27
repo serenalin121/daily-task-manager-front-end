@@ -36,7 +36,12 @@ export default class SignUp extends Component {
         }
       })
       if (response.status === 200) {
+        console.log(response)
         this.props.getTasks()
+        this.setState({
+          username: "",
+          password: "",
+        })
       }
     }
     catch (err) {
