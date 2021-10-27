@@ -41,6 +41,7 @@ export default class NewForm extends Component {
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include"
     })
       .then((res) => {
         return res.json();
