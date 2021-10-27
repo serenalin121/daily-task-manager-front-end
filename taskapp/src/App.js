@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Task from "./components/Task";
 import NewForm from "./components/Newform";
-import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
@@ -104,20 +103,14 @@ const App = () => {
     <div className="App">
       <Container>
         <h1>Daily Task Manager</h1>
-        {!isLoggedIn && (
-          <SignIn
-            isSignin={false}
-            baseUrl={baseUrl}
-            isLoggedIn={setIsLoggedIn}
-          />
-        )}
-        {!isLoggedIn && (
+        {!isLoggedIn && <SignIn baseUrl={baseUrl} isLoggedIn={setIsLoggedIn} />}
+        {/* {!isLoggedIn && (
           <SignIn
             isSignin={true}
             baseUrl={baseUrl}
             isLoggedIn={setIsLoggedIn}
           />
-        )}
+        )} */}
         {isLoggedIn && <button onClick={signOut}>Sign out</button>}
         <h2>Add a new task</h2>
         <NewForm baseUrl={baseUrl} addTask={handleAddTask} />

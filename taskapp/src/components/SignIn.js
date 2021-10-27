@@ -6,6 +6,7 @@ export default class SignIn extends Component {
     this.state = {
       username: "",
       password: "",
+      isExistUser: true,
     };
   }
 
@@ -26,7 +27,7 @@ export default class SignIn extends Component {
     const url =
       this.props.baseUrl +
       "/users/" +
-      (this.props.isSignin ? "signin" : "signup");
+      (this.state.isExistUser ? "signin" : "signup");
 
     try {
       const response = await fetch(url, {
@@ -54,11 +55,15 @@ export default class SignIn extends Component {
     }
   };
 
+  handleLoginMode = () => {
+    this.setState({ isExistUser: !this.state.isExistUser });
+  };
+
   render() {
     return (
       <>
         <form onSubmit={this.signInUser}>
-          <strong>{this.props.isSignin ? "Sign In" : "Sign Up"}</strong>
+          <strong>{this.state.isExistUser ? "Sign In" : "Sign Up"}</strong>
           <label htmlFor="name">Username:</label>
           <input
             type="text"
@@ -73,8 +78,17 @@ export default class SignIn extends Component {
           />
           <input
             type="submit"
-            value={this.props.isSignin ? "Sign In" : "Sign Up"}
+            value={this.state.isExistUser ? "Sign In" : "Sign Up"}
           />
+          <button
+            type="button"
+            className="signInToggle"
+            onClick={this.handleLoginMode}
+          >
+            {this.state.isExistUser
+              ? "Create new account"
+              : "Login with existing account"}
+          </button>
         </form>
       </>
     );

@@ -68,3 +68,16 @@ img {
 .App-link {
   color: #61dafb;
 }
+
+.signInToggle {
+  margin-top: 1rem;
+  background-color: transparent;
+  color: #510ea8;
+  border: none;
+  padding: 0.15rem 1.5rem;
+}
+
+.signInToggle:hover {
+  background-color: transparent;
+  color: #dda9ff;
+}
