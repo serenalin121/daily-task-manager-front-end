@@ -13,19 +13,18 @@ body {
   max-width: 100%;
 }
 
-h1 {
+h1,
+h2 {
   color: white;
   font-weight: bolder;
   padding-top: 20px;
   padding-bottom: 40px;
-  margin-left: 10px;
 }
 
 h2 {
   font-size: x-large;
   padding-bottom: 20px;
 }
-
 
 img {
   padding: 100px;
@@ -87,12 +86,12 @@ img {
 .signInToggle {
   margin-top: 1rem;
   background-color: transparent;
-  color: #510ea8;
+  color: #000000;
   border: none;
   padding: 0.15rem 1.5rem;
 }
 
 .signInToggle:hover {
   background-color: transparent;
-  color: #dda9ff;
+  color: #4b4b4b;
 }

@@ -4,7 +4,7 @@ import NewForm from "./components/Newform";
 import SignIn from "./components/SignIn";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-import { Navbar, Container, Row, Col, Table } from "react-bootstrap";
+import { Navbar, Container, Row, Col, Table, Button } from "react-bootstrap";
 
 import "./App.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -108,7 +108,11 @@ const App = () => {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            {isLoggedIn && <button onClick={signOut}>Sign out</button>}
+            {isLoggedIn && (
+              <Button variant="light" onClick={signOut}>
+                Sign out
+              </Button>
+            )}
           </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>

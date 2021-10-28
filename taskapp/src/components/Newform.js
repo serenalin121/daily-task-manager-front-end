@@ -53,7 +53,7 @@ export default class NewForm extends Component {
         this.setState({
           name: "",
           dueDate: "",
-          isComplete: null,
+          isComplete: false,
         });
       })
       .catch((error) => console.log({ Error: error }));
@@ -62,7 +62,7 @@ export default class NewForm extends Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
-        <Form.Group className="mb-3" class="task">
+        <Form.Group className="mb-3 task">
           <Form.Label>Task</Form.Label>
           <Form.Control
             md={{ span: 6, offset: 6 }}
@@ -72,7 +72,7 @@ export default class NewForm extends Component {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" class="date">
+        <Form.Group className="mb-3 date">
           <Form.Label>Due Date</Form.Label>
           <Form.Control
             type="date"
@@ -81,7 +81,7 @@ export default class NewForm extends Component {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicCheckbox" class="complete">
+        <Form.Group className="mb-3 complete" controlId="formBasicCheckbox">
           <Form.Label>Completed?</Form.Label>
           <Form.Check
             type="checkbox"
