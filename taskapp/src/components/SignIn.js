@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "react-bootstrap/Button";
 
 export default class SignIn extends Component {
   constructor(props) {
@@ -80,15 +81,16 @@ export default class SignIn extends Component {
             type="submit"
             value={this.state.isExistUser ? "Sign In" : "Sign Up"}
           />
-          <button
+          <Button
             type="button"
+            variant="submit"
             className="signInToggle"
             onClick={this.handleLoginMode}
           >
             {this.state.isExistUser
               ? "Create new account"
               : "Login with existing account"}
-          </button>
+          </Button>
         </form>
       </>
     );
