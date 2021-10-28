@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
 export default class NewForm extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ export default class NewForm extends Component {
       headers: {
         "Content-Type": "application/json",
       },
-      credentials: "include"
+      credentials: "include",
     })
       .then((res) => {
         return res.json();
@@ -57,7 +57,7 @@ export default class NewForm extends Component {
       <form>
       <>
         <td>
-          <input 
+          <Form.Control
             type="text"
             id="name"
             name="name"
@@ -66,7 +66,7 @@ export default class NewForm extends Component {
           />
         </td>
         <td>
-          <input 
+          <Form.Control
             type="date"
             id="dueDate"
             name="dueDate"
@@ -76,7 +76,7 @@ export default class NewForm extends Component {
         </td>
 
         <td>
-          <input
+          <Form.Check
             type="checkbox"
             checked={this.state.isComplete}
             onChange={(e) => this.handleChangeComplete(e)}
