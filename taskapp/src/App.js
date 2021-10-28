@@ -18,19 +18,13 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const events = tasks.map((task) => ({
-    start: moment(task.dueDate).toDate(),
-    end: moment(task.dueDate).add(1, "days").toDate(),
-    title: task.name,
-  }));
-
-  const getTasks = () => {
+  const getTasks = (tasks) => {
     fetch(baseUrl + "/tasks", {
       credentials: "include",
     })
       .then((res) => {
         if (res.status === 200) {
-          return res.json();
+          return res.json()
         } else {
           return [];
         }
@@ -39,6 +33,12 @@ const App = () => {
         setTasks(data);
       });
   };
+
+  const events = tasks.map((task) => ({
+    start: moment(task.dueDate).toDate(),
+    end: moment(task.dueDate).add(1, "days").toDate(),
+    title: task.name,
+  }));
 
   const signOut = () => {
     fetch(baseUrl + "/users/signout", {
