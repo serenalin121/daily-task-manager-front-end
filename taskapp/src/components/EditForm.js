@@ -54,7 +54,7 @@ export default class NewForm extends Component {
 
   render() {
     return (
-      <form>
+      // <form>
       <>
         <td>
           <input 
@@ -93,7 +93,7 @@ export default class NewForm extends Component {
           </Button>
         </td>
       </>
-      </form>
+      // </form>
     );
   }
 }
