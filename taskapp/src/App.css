@@ -49,6 +49,10 @@ img {
   font-size: large;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 #image {
   animation-duration: 3s;
   animation-name: slidein;
