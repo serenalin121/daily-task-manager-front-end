@@ -130,7 +130,7 @@ const App = () => {
             <h3>All Tasks</h3>
             <Table striped bordered hover>
               <tbody>
-                <tr>
+                <tr class="bold">
                   <td>Task Name</td>
                   <td>Due Date</td>
                   <td>Completed</td>
