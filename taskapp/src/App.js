@@ -101,7 +101,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Navbar bg="light" variant="light">
+      <Navbar bg="transparent" variant="transparent">
         <Navbar.Brand href="#home">
           <h1>Daily Task Manager</h1>
         </Navbar.Brand>

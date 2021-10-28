@@ -8,18 +8,24 @@
 }
 
 body {
-  background-image: url(https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2017/07/Computer-Wallpaper-Productive-Featured.jpg);
+  background-image: url(https://imgur.com/huX6Jv6.jpg);
   background-size: cover;
+  max-width: 100%;
 }
 
 h1 {
-  color: green;
+  color: white;
+  font-weight: bolder;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  margin-left: 10px;
 }
 
 h2 {
   font-size: x-large;
   padding-bottom: 20px;
 }
+
 
 img {
   padding: 100px;
