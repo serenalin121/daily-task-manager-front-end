@@ -69,6 +69,7 @@ export default class NewForm extends Component {
             type="text"
             onChange={(e) => this.handleChangeName(e)}
             value={this.state.name}
+            required
           />
         </Form.Group>
 
@@ -78,6 +79,7 @@ export default class NewForm extends Component {
             type="date"
             onChange={(e) => this.handleChangeDueDate(e)}
             value={this.state.dueDate}
+            required
           />
         </Form.Group>
 

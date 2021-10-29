@@ -8,22 +8,20 @@
 }
 
 body {
-  background-image: url(https://imgur.com/huX6Jv6.jpg);
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.66),
+      rgba(255, 255, 255, 0.66)
+    ),
+    url(https://imgur.com/huX6Jv6.jpg);
   background-size: cover;
   max-width: 100%;
 }
 
 h1,
 h2 {
-  color: white;
+  color: black;
   font-weight: bolder;
   padding-top: 20px;
-  padding-bottom: 40px;
-}
-
-h2 {
-  font-size: x-large;
-  padding-bottom: 20px;
 }
 
 img {
