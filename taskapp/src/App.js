@@ -24,7 +24,7 @@ const App = () => {
     })
       .then((res) => {
         if (res.status === 200) {
-          return res.json()
+          return res.json();
         } else {
           return [];
         }
@@ -109,7 +109,7 @@ const App = () => {
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
             {isLoggedIn && (
-              <Button variant="light" onClick={signOut}>
+              <Button size="lg" variant="light" onClick={signOut}>
                 Sign out
               </Button>
             )}
@@ -130,7 +130,7 @@ const App = () => {
             <h3>All Tasks</h3>
             <Table striped bordered hover>
               <tbody>
-                <tr class="bold">
+                <tr className="bold">
                   <td>Task Name</td>
                   <td>Due Date</td>
                   <td>Completed</td>
