@@ -12,7 +12,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 // Setup the localizer by providing the moment Object to the correct localizer.
 const localizer = momentLocalizer(moment);
 
-const baseUrl = process.env.REACT_APP_BASEURL;
+const baseUrl = process.env.REACT_APP_BASEURL || 3000
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
